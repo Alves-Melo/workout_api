@@ -1,0 +1,14 @@
+
+version: "3.9"
+services:
+  api:
+    build: .
+    container_name: workout_api
+    environment:
+      - DATABASE_URL=sqlite:////data/app.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - db_data:/data
+volumes:
+  db_data:
